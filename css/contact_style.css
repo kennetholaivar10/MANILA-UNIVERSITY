@@ -1,0 +1,308 @@
+/* =========================
+   Fonts
+========================= */
+@font-face {
+   font-family: myFirstFont;
+   src: url(../Poppins/Poppins-Regular.ttf);
+}
+
+@font-face {
+   font-family: bold;
+   src: url(../Poppins/Poppins-Bold.ttf);
+}
+
+/* =========================
+   Root Variables
+========================= */
+:root {
+   --white: #fff;
+   --text-clr: #000024;
+   --primary: #3e2093;
+   --secondary: #000008;
+   --input-bg: #f1f1ff;
+   --btn-hvr: #1a0065;
+   --tra: rgba(255, 255, 255, 0.95);
+   --bordcolor: rgba(0, 26, 255, 0.08);
+}
+
+/* =========================
+   Reset & Base
+========================= */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: myFirstFont, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+   font-size: 14px;
+   color: var(--text-clr);
+   min-height: 100vh;
+   width: 100%;
+   background: linear-gradient(rgba(4, 9, 30, 0.6), rgba(4, 9, 30, 0.6)),
+      url(../image/background.jpg) center/cover no-repeat;
+}
+
+/* Remove outlines globally */
+*:focus {
+   outline: none;
+}
+
+/* =========================
+   Scrollbar Styles
+========================= */
+body::-webkit-scrollbar,
+.mess::-webkit-scrollbar {
+   width: 5px;
+   height: 5px;
+}
+
+body::-webkit-scrollbar-track,
+.mess::-webkit-scrollbar-track {
+   background: #3838387c;
+}
+
+body::-webkit-scrollbar-thumb,
+.mess::-webkit-scrollbar-thumb {
+   background-color: #e0120ba4;
+   border: 1px solid #ff020279;
+   border-radius: 2px;
+}
+
+/* =========================
+   Header & Navigation
+========================= */
+.header {
+   min-height: 100vh;
+   width: 100%;
+   background: linear-gradient(rgba(4, 9, 30, 0.6), rgba(4, 9, 30, 0.6)),
+      url(../image/background.jpg) center/cover no-repeat;
+   position: relative;
+}
+
+nav {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 2% 6%;
+}
+
+nav img {
+   width: 150px;
+}
+
+.nav-links {
+   flex: 1;
+   text-align: right;
+}
+
+.nav-links ul li {
+   list-style: none;
+   display: inline-block;
+   padding: 8px 12px;
+   position: relative;
+}
+
+.nav-links a {
+   color: #fff;
+   text-decoration: none;
+   font-size: 16px;
+}
+
+.nav-links ul li::after {
+   content: "";
+   width: 0%;
+   height: 2px;
+   background: #ff0000;
+   display: block;
+   margin: auto;
+   transition: 0.5s;
+}
+
+.nav-links ul li:hover::after {
+   width: 100%;
+}
+
+.icon {
+   display: none;
+   font-size: 25px;
+   color: #fff;
+   cursor: pointer;
+   margin: 10px;
+}
+
+/* =========================
+   Forms
+========================= */
+.wrapper {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   padding: 0 10px;
+   margin-top: 20px;
+}
+
+.r_form_wrap {
+   width: 500px;
+   max-width: 100%;
+}
+
+.r_form_wrap .title {
+   padding: 25px;
+   background: var(--white);
+   border-radius: 5px;
+   margin-bottom: 20px;
+}
+
+.r_form_wrap .title p {
+   font-size: 25px;
+   text-align: center;
+   font-family: bold;
+}
+
+.r_form {
+   padding: 40px;
+   background: var(--tra);
+   border-radius: 5px;
+}
+
+.r_form .input_wrap {
+   margin-bottom: 25px;
+}
+
+.r_form .input_wrap label {
+   display: block;
+   margin-bottom: 5px;
+}
+
+.r_form .input_wrap .input_item {
+   position: relative;
+   width: 100%;
+}
+
+.r_form .input_wrap .input_item .input {
+   width: 100%;
+   height: 40px;
+   border-radius: 3px;
+   border: 2px solid var(--bordcolor);
+   background: var(--input-bg);
+   padding: 10px 20px 10px 50px;
+   color: var(--secondary);
+   transition: border 0.3s ease;
+}
+
+.r_form .input_wrap .input_item .input:focus {
+   border-color: var(--primary);
+}
+
+.r_form .input_wrap .input_item .icon,
+#icon {
+   position: absolute;
+   top: 12px;
+   left: 20px;
+   font-size: 16px;
+   color: var(--secondary);
+}
+
+.mess {
+   width: 100%;
+   height: 250px;
+   border-radius: 3px;
+   border: 2px solid var(--bordcolor);
+   background: var(--input-bg);
+   padding: 10px 20px 10px 50px;
+   color: var(--secondary);
+   transition: border 0.3s ease;
+}
+
+.mess:focus {
+   border-color: var(--primary);
+}
+
+/* =========================
+   Buttons
+========================= */
+.button,
+.clear_ad {
+   width: 100%;
+   height: 40px;
+   border: 0;
+   border-radius: 3px;
+   cursor: pointer;
+   color: var(--white);
+   transition: 0.3s ease;
+}
+
+.button {
+   background: var(--primary);
+}
+
+.button:hover {
+   background: var(--btn-hvr);
+}
+
+.clear_ad {
+   margin-top: 10px;
+   background: var(--btn-hvr);
+}
+
+.clear_ad:hover {
+   background: var(--primary);
+}
+
+/* =========================
+   Helpers
+========================= */
+.center {
+   text-align: center;
+}
+
+.none_div {
+   height: 100px;
+   width: 100px;
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 700px) {
+   * {
+      overflow-x: hidden;
+   }
+
+   #logo-img {
+      padding: 10px;
+   }
+
+   .nav-links {
+      position: absolute;
+      top: 0;
+      right: -220px;
+      width: 200px;
+      height: 100vh;
+      background: #f44336;
+      text-align: left;
+      padding: 30px;
+      transition: 0.5s;
+      z-index: 100;
+   }
+
+   .nav-links ul li {
+      display: block;
+      margin-bottom: 15px;
+   }
+
+   .icon {
+      display: block;
+   }
+
+   .container {
+      padding: 12px 24px 24px;
+      margin: 45px 25px;
+   }
+
+   .c_from {
+      margin-top: 15px;
+   }
+}

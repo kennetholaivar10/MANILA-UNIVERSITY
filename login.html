@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN | Manila University</title>
+    <link rel="shortcut icon" href="image/favicon.ico" type="image/svg+xml">
+    <link rel="stylesheet" href="css/login_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* Small fix for password toggle icon */
+        .password-toggle {
+            cursor: pointer;
+            margin-left: -30px;
+            color: #666;
+        }
+
+        .password-toggle:hover {
+            color: #3e2093;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="header">
+        <nav>
+            <a href="index.html"><img src="image/MU_logo.png" id="logo-img" alt="MU Logo"></a>
+
+            <div class="nav-links" id="navLinks">
+                <span class="icon" onclick="hidemenu()">&#10005;</span>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Admission_page.html">Admission</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="index.html#course_call">Courses</a></li>
+                    <li><a href="Contact_page.html">Contact</a></li>
+                    <li><a href="login.html"><i class="fa fa-user-circle"></i> Login</a></li>
+                </ul>
+            </div>
+            <span class="icon" onclick="showmenu()">&#9776;</span>
+        </nav>
+
+        <!-- Login Form Wrapper -->
+        <div class="login-wrapper">
+            <div class="login-box">
+
+                <h2>User Login</h2>
+
+                <form method="post" onsubmit="return loginUser();">
+
+                    <div class="input_wrap">
+                        <div class="input_item">
+                            <i class="fa fa-envelope"></i>
+                            <input type="email" name="email" class="input" id="email" placeholder="Email Address"
+                                required>
+                        </div>
+                    </div>
+
+                    <div class="input_wrap">
+                        <div class="input_item">
+                            <i class="fa fa-lock"></i>
+                            <input type="password" name="password" class="input" id="password" placeholder="Password"
+                                required>
+                            <i class="fa fa-eye password-toggle" id="togglePassword" onclick="togglePassword()"></i>
+                        </div>
+                    </div>
+
+                    <input type="submit" class="button" value="Login">
+
+                    <div class="extra-links">
+                        <p>Don't have an account? <a href="Admission_page.html">Register here</a></p>
+                        <p><a href="#">Forgot Password?</a></p>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const navLinks = document.getElementById("navLinks");
+        function showmenu() {
+            navLinks.style.right = "0";
+        }
+        function hidemenu() {
+            navLinks.style.right = "-220px";
+        }
+
+        // Static login credentials
+        const staticEmail = "student@gmail.com";
+        const staticPassword = "student";
+
+        function loginUser() {
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value.trim();
+
+            if (email === staticEmail && password === staticPassword) {
+                alert("✅ Login successful! Welcome, Student.");
+                window.location.href = "dashboard.html";
+                return false;
+            } else {
+                alert("❌ Invalid email or password. Please try again.");
+                return false;
+            }
+        }
+
+        // Toggle Password Reveal/Hide
+        function togglePassword() {
+            const passwordInput = document.getElementById("password");
+            const toggleIcon = document.getElementById("togglePassword");
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                toggleIcon.classList.remove("fa-eye");
+                toggleIcon.classList.add("fa-eye-slash");
+            } else {
+                passwordInput.type = "password";
+                toggleIcon.classList.remove("fa-eye-slash");
+                toggleIcon.classList.add("fa-eye");
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,213 @@
+/* ===== Global Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #e8ecf5, #f9f9ff);
+    color: #000024;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== Header Nav ===== */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%;
+    background: #3e2093;
+    position: relative;
+    z-index: 100;
+}
+
+#logo-img {
+    width: 120px;
+    height: auto;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.nav-links ul li a:hover {
+    color: #ffd700;
+}
+
+.icon {
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    display: none;
+}
+
+/* ===== Login Form Wrapper ===== */
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    padding: 20px;
+}
+
+.login-box {
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    animation: fadeIn 0.8s ease;
+}
+
+.login-box h2 {
+    margin-bottom: 25px;
+    font-size: 24px;
+    color: #3e2093;
+}
+
+/* ===== Inputs ===== */
+.input_wrap {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input_item {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 12px;
+    background: #f9f9f9;
+}
+
+.input_item i {
+    color: #3e2093;
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.input_item .input {
+    border: none;
+    outline: none;
+    background: transparent;
+    flex: 1;
+    font-size: 14px;
+}
+
+/* ===== Button ===== */
+.button {
+    width: 100%;
+    background: #3e2093;
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+}
+
+.button:hover {
+    background: #2b1670;
+}
+
+/* ===== Extra Links ===== */
+.extra-links {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.extra-links a {
+    color: #3e2093;
+    text-decoration: none;
+}
+
+.extra-links a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 992px) {
+    nav {
+        padding: 15px 5%;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Mobile Menu */
+    .nav-links {
+        position: absolute;
+        right: -220px;
+        top: 0;
+        height: 100vh;
+        width: 200px;
+        background: #3e2093;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 50px 20px;
+        transition: 0.5s;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .icon {
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-box {
+        padding: 25px 20px;
+        max-width: 95%;
+    }
+
+    .login-box h2 {
+        font-size: 20px;
+    }
+
+    .button {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    .input_item {
+    }
+}
